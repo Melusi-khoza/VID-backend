@@ -29,7 +29,7 @@ namespace VID.Controllers
         {
             try
             {
-                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=VID_FULLDATABASE;Username=postgres;Password=sifisom;"))
+                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=HomeAffairsDB_MOCK;Username=postgres;Password=melusi;"))
                 {
                     await connection.OpenAsync();
 
@@ -69,7 +69,7 @@ namespace VID.Controllers
         {
             try
             {
-                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=VID_FULLDATABASE;Username=postgres;Password=sifisom;"))
+                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=HomeAffairsDB_MOCK;Username=postgres;Password=melusi;"))
                 {
                     await connection.OpenAsync();
 
