@@ -74,13 +74,14 @@ builder.WebHost.ConfigureKestrel(options =>
 
         // Add CORS support
 builder.Services.AddCors(options =>
-        {
-            options.AddPolicy("AllowReactApp",
-                builder => builder
-                    .WithOrigins("http://localhost:3000")
-                    .AllowAnyMethod()
-                    .AllowAnyHeader());
-        });
+{
+    options.AddPolicy("AllowReactFrontend", policy =>
+    {
+        policy.WithOrigins("https://vid-frontend-cq3w.onrender.com")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
         
         //
@@ -96,7 +97,7 @@ builder.Services.AddCors(options =>
 
 
         var app = builder.Build();
-        app.UseCors("AllowReactApp");
+        app.UseCors("AllowReactFrontend");
 
         if (app.Environment.IsDevelopment())
         {
