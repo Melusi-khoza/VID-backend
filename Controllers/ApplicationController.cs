@@ -35,7 +35,7 @@ namespace VID.Controllers
 
             try
             {
-                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=HomeAffairsDB;Username=postgres;Password=sifisom;"))
+                using (var connection = new NpgsqlConnection("Host=localhost;Port=5433;Database=HomeAffairsDB_MOCK;Username=postgres;Password=melusi;"))
                 {
                     Console.WriteLine("Opening database connection...");
                     await connection.OpenAsync();
@@ -85,7 +85,7 @@ namespace VID.Controllers
 
         try
         {
-            using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=HomeAffairsDB;Username=postgres;Password=sifisom;"))
+            using (var connection = new NpgsqlConnection("Host=localhost;Port=5433;Database=HomeAffairsDB_MOCK;Username=postgres;Password=melusi;"))
             {
                 await connection.OpenAsync();
 
