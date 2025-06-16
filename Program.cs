@@ -67,28 +67,31 @@ using VID.Services;
         // Add CORS support
         builder.Services.AddCors(options =>
         {
-            options.AddPolicy("AllowReactApp",
+            options.AddPolicy("AllowAll",
                 builder => builder
-                    .WithOrigins("http://localhost:3000")
+                    .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader());
         });
 
-        
-        //
-        // services.AddCors(options =>
-        // {
-        //     options.AddDefaultPolicy(builder =>
-        //     {
-        //         builder.AllowAnyOrigin()
-        //             .AllowAnyHeader()
-        //             .AllowAnyMethod();
-        //     });
-        // });
+
+//
+// services.AddCors(options =>
+// {
+//     options.AddDefaultPolicy(builder =>
+//     {
+//         builder.AllowAnyOrigin()
+//             .AllowAnyHeader()
+//             .AllowAnyMethod();
+//     });
+// });
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 
-        var app = builder.Build();
-        app.UseCors("AllowReactApp");
+var app = builder.Build();
+        app.UseCors("AllowAll");
 
         if (app.Environment.IsDevelopment())
         {

@@ -816,3 +816,9 @@ C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-ba
 C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\obj\Debug\net9.0\VID.pdb
 C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\obj\Debug\net9.0\VID.genruntimeconfig.cache
 C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\obj\Debug\net9.0\ref\VID.dll
+C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\bin\Debug\net9.0\publish\publish\web.config
+C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\bin\Debug\net9.0\publish\publish\appsettings.Development.json
+C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\bin\Debug\net9.0\publish\publish\appsettings.json
+C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\bin\Debug\net9.0\publish\publish\VID.deps.json
+C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\bin\Debug\net9.0\publish\publish\VID.runtimeconfig.json
+C:\Users\Administrator\OneDrive\Documents\221444167\SWP316D\Final Project\VID-backend\bin\Debug\net9.0\publish\publish\VID.staticwebassets.endpoints.json
