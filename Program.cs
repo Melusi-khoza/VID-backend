@@ -63,17 +63,9 @@ using VID.Services;
                 };
 #pragma warning restore CS8604 // Possible null reference argument.
             });
-        
-        // Add this block to configure the port from Render's environment variable
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-
-builder.WebHost.ConfigureKestrel(options =>
-{
-    options.ListenAnyIP(int.Parse(port));
-});
 
         // Add CORS support
-builder.Services.AddCors(options =>
+        builder.Services.AddCors(options =>
         {
             options.AddPolicy("AllowReactApp",
                 builder => builder

@@ -157,7 +157,7 @@ namespace VID.Controllers
         {
             try
             {
-                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=HomeAffairsDB;Username=postgres;Password=sifisom;"))
+                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=HomeAffairsDB_MOCK;Username=postgres;Password=melusi;"))
                 {
                     await connection.OpenAsync();
                     var query = @"
@@ -487,7 +487,7 @@ public async Task<IActionResult> GetProfilePictureByPersonId(string personId)
                 byte[] photoBytes = await System.IO.File.ReadAllBytesAsync(fullPath);
                 Console.WriteLine($"Read {photoBytes.Length} bytes from file");
 
-                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=HomeAffairsDB;Username=postgres;Password=sifisom;"))
+                using (var connection = new NpgsqlConnection("Host=localhost;Port=5432;Database=HomeAffairsDB_MOCK;Username=postgres;Password=melusi;"))
                 {
                     await connection.OpenAsync();
 
