@@ -67,9 +67,9 @@ using VID.Services;
         // Add CORS support
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", policy =>
+    options.AddPolicy("AllowReactFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("https://vid-frontend-cq3w.onrender.com")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -89,7 +89,7 @@ builder.Services.AddCors(options =>
 
 
         var app = builder.Build();
-        app.UseCors("AllowReactApp");
+        app.UseCors("AllowReactFrontend");
 
         if (app.Environment.IsDevelopment())
         {
