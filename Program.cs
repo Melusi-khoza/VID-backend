@@ -63,16 +63,25 @@ using VID.Services;
                 };
 #pragma warning restore CS8604 // Possible null reference argument.
             });
+        
+        // Add this block to configure the port from Render's environment variable
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(int.Parse(port));
+});
 
         // Add CORS support
-        builder.Services.AddCors(options =>
-        {
-            options.AddPolicy("AllowReactApp",
-                builder => builder
-                    .WithOrigins("http://localhost:3000")
-                    .AllowAnyMethod()
-                    .AllowAnyHeader());
-        });
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactFrontend", policy =>
+    {
+        policy.WithOrigins("https://vid-frontend-cq3w.onrender.com")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
         
         //
@@ -88,7 +97,7 @@ using VID.Services;
 
 
         var app = builder.Build();
-        app.UseCors("AllowReactApp");
+        app.UseCors("AllowReactFrontend");
 
         if (app.Environment.IsDevelopment())
         {
